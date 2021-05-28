@@ -1,0 +1,202 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100%;
+    margin-bottom: auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    /* background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 80%, rgba(0, 0, 0, 0) 100%); */
+    padding: 1rem 2rem 1.5rem 1rem;
+}
+
+h2 {
+    width: 150px;
+    position: relative;
+    margin-top: auto;
+    /* bottom: 1rem; */
+    left: 1rem;
+    font-weight: 200;
+    font-size: 1em;
+}
+
+#plus {
+    filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(201deg) brightness(106%) contrast(106%);
+    transform: scale(5);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    height: 5px;
+    transition: all 100ms ease-in-out;
+}
+
+#plus:hover {
+    filter: invert();
+    transform: scale(7);
+    cursor: pointer;
+}
+
+.timerGrid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: auto;
+}
+
+.timer, .newTimer {
+    flex: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    border: 3px solid white;
+    border-radius: 15px;
+    width: 40vw;
+    height: 250px;
+    cursor: pointer;
+    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+.timer:hover, .newTimer:hover {
+    transform: scale(1.03);
+    /* box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.05) */
+}
+
+.newTimer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.newTimer #plus {
+    margin: 4rem;
+    transform: scale(18);
+}
+
+.timerTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.timerDescription {
+    margin-top: 0rem;
+    font-size: 1.5rem;
+}
+
+.timerCountdown {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 2rem;
+    width: 200px;
+}
+
+.timerCountdown div:not(:last-child) {
+    margin-right: 0.1rem;
+}
+
+.timerCountdown div:not(:first-child) {
+    margin-left: 0.1rem;
+}
+
+html {
+    background: linear-gradient(270deg, #46f3c7, #d547ff, #4df2f3, #55f34d, #f3da4d, #ff6251);
+    background-size: 1200% 1200%;
+    -webkit-animation: BackgroundGradient 60s ease infinite;
+    -moz-animation: BackgroundGradient 60s ease infinite;
+    animation: BackgroundGradient 60s ease infinite;
+}
+
+@-webkit-keyframes BackgroundGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes BackgroundGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes BackgroundGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.popups {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+    transition: all 1000ms ease-in-out;
+}
+
+.popupHidden {
+    display: none;
+}
+
+.newTimerPopup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 3px solid white;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 1);
+    display: block;
+    margin: auto;
+    padding: 5rem;
+    z-index: 2;
+    width: 30rem;
+    height: 35rem;
+    color: black;
+}
